@@ -9,7 +9,7 @@
         <h2>My Study ,,,</h2>
     </div>
 
-    {% for blog in blogs.all %}
+    {% for blog in posts %}
         <div class="container">
             <br>
             <div class="card">
@@ -22,6 +22,21 @@
             </div>
         </div>
     {% endfor %}
+    <br><br>
+
+    <div class="container">
+        {% if posts.has_previous %}
+            <a href="?page={{posts.previous_page_number}}">Pre</a>
+        {% endif %}
+
+        {% for post in posts.paginator.page_range %}
+            <a href="?page={{post}}">{{post}}</a>
+        {% endfor %}
+
+        {% if posts.has_next %}
+            <a href="?page={{posts.next_page_number}}">Next</a>
+        {% endif %}  
+    </div>
     <br><br>
 
 </body>
