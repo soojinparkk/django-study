@@ -14,4 +14,7 @@ urlpatterns = [
     # path('blog/new', blogapp.views.new, name="new"),
     # path('blog/create', blogapp.views.create, name="create"),
     path('portfolio/', portfolioapp.views.portfolio, name="portfolio"),
+
+    path('accounts/', include('allauth.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+
+{% block contents %}
+
+
+{%load socialaccount %}
+{% providers_media_js %}
+
+
+<body>
+
+    <div class="container">
+        <br>
+        <a href="/accounts/signup">SIGN UP</a><br>
+
+        {% if user.is_authenticated %}
+        <a href="/accounts/logout">LOGOUT</a><br>
+        {{user.username}}님 LOGIN
+
+        {% else %}
+        <a href="{% provider_login_url 'google' %}">GOOGLE</a><br>
+        PLEASE LOGIN
+        {% endif %}
+    </div>
+    <br><br>
+
+</body>
+
+{% endblock %}
