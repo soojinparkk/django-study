@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Blog
+from .models import Pictures
 
 def home(request):
     blogs = Blog.objects
@@ -28,3 +29,7 @@ def login(request):
 
 def map(request):
     return render(request, 'map.html')
+
+def thumbnail(request):
+    blogPic = Pictures.objects
+    return render(request, 'thumbnail.html', {'blogPic': blogPic})

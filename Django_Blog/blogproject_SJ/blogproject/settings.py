@@ -50,6 +50,8 @@ INSTALLED_APPS = [
 
     # provider -> google, kakao, facebook ,,,
     'allauth.socialaccount.providers.google',
+
+    'imagekit',
 ]
 
 MIDDLEWARE = [
@@ -131,6 +133,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# media 정의
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # static 파일들이 현재 어디에 있는지를 쓰는 곳
 STATICFILES_DIRS = [

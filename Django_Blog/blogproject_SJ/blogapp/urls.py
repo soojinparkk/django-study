@@ -8,4 +8,5 @@ urlpatterns = [
     path('create', views.create, name="create"),
     path('login', views.login, name="login"),
     path('map', views.map, name="map"),
+    path('thumbnail', views.thumbnail, name="thumbnail"),
 ]

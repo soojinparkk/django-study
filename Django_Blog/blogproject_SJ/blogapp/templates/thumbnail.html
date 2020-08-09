@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<body>
+    <br>
+    <div class="container">
+        <h2>ThumbNail</h2>
+        
+        {% for blog in blogPic.all %}
+
+        <img src="{{blog.image.url}}" width="500">
+        <br>
+        {{blog.text}}
+        <br><br>
+
+        <img src="{{blog.image_thumbnail.url}}" >
+
+        {% endfor %}
+    </div>
+
+</body>
+
+{% endblock %}
